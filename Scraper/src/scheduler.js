@@ -1,34 +1,38 @@
-const { getJobPostLinks ,findContactInPost } = require('./services/scraper')
+const { getJobPostLinks, findContactInPost } = require('./services/scraper');
 
 async function runScraperTask() {
+    console.log('Starting job search for Node.js developers in Noida & Gurugram...');
 
-    console.log('Starting job search ')
-    //scrape indeed
-    const indeedLinks = await getJobPostLinks( 
+    try {
+        const indeedLinks = await getJobPostLinks( 
             'https://www.indeed.com/jobs?q=nodejs+developer',
     'a.jcs-JobTitle'
     )
+     
+        
+        // Combine all arrays of links into a single, flat array
+        const allLinks = [
+            ...(indeedLinks || []), 
+          
+        ];
 
-    //scrape glassdoor
-    const glassDoorLinks = await getJobPostLinks(
-         'https://www.glassdoor.com/Job/nodejs-developer-jobs-SRCH_KO0,16.htm',
-    'a.jobLink'
-    )
+        console.log(`Checking a total of ${allLinks.length} links.`);
+        console.log(allLinks)
 
-    //combine links
-    const allLinks = [...indeedLinks, ...glassDoorLinks]
-    console.log(`checking a total of ${allLinks.length} links`)
-
-    //iterate through each link, pass each link to 2nd method that returns the contct nubmer
-    for ( const link of allLinks ){
-        const jobDetails = await findContactInPost( link)
-        if( jobDetails){
-            console.log('found the contact no.')
-            console.log('contact details',  jobDetails)
-            break;
+        // Iterate through each individual link to find a contact number
+        for (const link of allLinks) {
+            const jobDetails = await findContactInPost(link);
+            if (jobDetails) {
+                console.log('Found a contact number!');
+                console.log('Contact Details:', jobDetails);
+                // Removed `break` to check all links, but you can add it back if you want to stop after the first find.
+                // break; 
+            }
         }
+        
+    } catch (error) {
+        console.error('An error occurred during the scraping task:', error);
     }
-
 }
 
-module.exports = { runScraperTask }
+module.exports = { runScraperTask };
