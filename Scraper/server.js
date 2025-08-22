@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const { runScraperTask } = require('./src/scheduler.js');
+const { runContinuousScraper } = require('./src/scheduler.js');
 
 dotenv.config();
 const app = express();
@@ -14,4 +14,4 @@ app.listen(PORT, () => {
     console.log("server runs");
 });
 
-runScraperTask();
+runContinuousScraper();
