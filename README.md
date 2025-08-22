@@ -1,4 +1,4 @@
-# HR Contact Number Scraper 📞
+# HR Contact Number Scraper 
 
 ## Overview
 This project demonstrates my proficiency in **web scraping**, **automation**, and **Node.js development**. The HR Contact Number Scraper is designed to extract HR contact details from job-related websites, streamlining outreach efforts for recruitment, networking, or job applications.
@@ -15,14 +15,18 @@ Built using **Node.js** and **Puppeteer**, this scraper automates the process of
 
 ---
 
-## 💼 Job-Relevant Skills Demonstrated
-| Skill Area            | Description                                                                 |
-|-----------------------|-----------------------------------------------------------------------------|
-| Web Scraping          | Extracting structured data from dynamic web pages using Puppeteer           |
-| Automation            | Automating browser actions like navigation, clicking, and data extraction   |
-| Data Handling         | Parsing and organizing contact information for easy consumption             |
-| Problem Solving       | Handling edge cases like missing data, pagination, and dynamic content       |
-| Clean Code Practices  | Modular, readable, and maintainable codebase                                |
+
+## 💼 Business Use Cases
+
+This scraper isn't just a technical demo—it solves real problems across industries. Here’s how:
+
+| Use Case                          | Description                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
+| **Recruitment Automation**       | Reduces manual effort by auto-collecting HR contacts for outreach.          |
+| **Lead Generation**              | Builds targeted contact lists for B2B sales and partnerships.               |
+| **Talent Acquisition Platforms** | Connects job seekers directly with hiring managers via scraped data.        |
+| **Market Research**              | Maps hiring trends by collecting HR contact data across industries.         |
+| **CRM Enrichment**               | Populates CRM systems with verified HR contacts for better personalization. |
 
 ---
 
@@ -35,8 +39,6 @@ Built using **Node.js** and **Puppeteer**, this scraper automates the process of
 
 ---
 
-
----
 
 ## 🧪 Setup & Run
 ```bash
