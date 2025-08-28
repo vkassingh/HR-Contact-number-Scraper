@@ -17,11 +17,13 @@ async function runScraperCycle() {
         );
 
         // Indeed - Node.js jobs in Noida
+        
         const indeedLinks = await getJobPostLinks(
-            'https://in.indeed.com/jobs?q=nodejs+developer&l=Noida%2C+Uttar+Pradesh',
-            'a.jcs-JobTitle',
+            'https://in.indeed.com/q-node-js-developer-l-noida,-uttar-pradesh-jobs.html',
+            'a.tapItem',
             'Indeed'
         );
+
 
         // LinkedIn - Node.js jobs in Noida
         const linkedinLinks = await getJobPostLinks(
